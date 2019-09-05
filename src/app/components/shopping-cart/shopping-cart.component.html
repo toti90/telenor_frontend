@@ -1,0 +1,17 @@
+<div class="containerDiv">
+  <h2>Shopping basket (  )</h2>
+  <div class="wrapper">
+    <div class="listOfItems">
+      <app-cart-item-card></app-cart-item-card>
+      <app-cart-item-card></app-cart-item-card>
+    </div>
+    <div class="sideDiv">
+      <button type="button" class="btn btn-success button" (click)="onRedirect('endOfShopping')">Buy Items</button>
+      <button type="button" class="btn btn-light button" (click)="onRedirect('')">Continue shopping</button>
+      <div class="totalPrice">
+        <h4>Total</h4>
+        <h4>  Ft</h4>
+      </div>
+    </div>
+  </div>
+</div>

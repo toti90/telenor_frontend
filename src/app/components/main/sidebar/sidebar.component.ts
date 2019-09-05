@@ -18,7 +18,6 @@ export class SidebarComponent implements OnInit {
   }
 
   selectKey(event: NzFormatEmitEvent) {
-      console.log(event)
     const clickedKey = event.node.key;
     this.mobilesService.getMobiles(clickedKey);
   }
