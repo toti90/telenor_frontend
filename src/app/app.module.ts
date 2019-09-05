@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MainComponent } from './components/main/main.component';
+import { FiltersComponent } from './components/main/filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
