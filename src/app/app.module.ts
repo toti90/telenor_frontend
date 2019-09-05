@@ -31,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatSliderModule} from '@angular/material/slider';
 
+const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
 
 // Import what you need. RECOMMENDED. ✔️
 import { registerLocaleData } from '@angular/common';
