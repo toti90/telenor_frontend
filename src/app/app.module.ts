@@ -35,7 +35,7 @@ registerLocaleData(en);
     ListItemComponent,
     ItemCardComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
     ShoppingCartComponent,
     CartItemCardComponent
   ],

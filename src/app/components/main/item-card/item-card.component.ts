@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MobilesService } from 'src/app/services/mobiles.service';
 
 @Component({
   selector: 'app-item-card',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemCardComponent implements OnInit {
 
-  constructor() { }
+  private phones: any;
+
+  constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
+    this.mobilesService.getMobiles();
+    this.mobilesService.selectedPhones.subscribe(response => this.phones = response);
   }
 
 }
