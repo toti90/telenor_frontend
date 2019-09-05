@@ -1,8 +1,5 @@
-<div class="col-xs-12">
+<div class="col-xs-6">
   <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
-      <label for="customRange1">Price</label>
-      <label for="customRange1">Example range</label>
-      <input type="range" class="custom-range" id="customRange1">
       <hr>
       <div class="custom-control custom-checkbox custom-control-inline">
           <input formControlName="colorDisplay" type="checkbox" class="custom-control-input" id="defaultInline1">
@@ -18,11 +15,11 @@
         <input formControlName="wap" type="checkbox" class="custom-control-input" id="defaultInline3">
         <label class="custom-control-label" for="defaultInline3">WAP</label>
       </div>
-      <hr>
       <button
-          type="submit"
-          class="btn btn-success">
-          Filter
-      </button>
+      type="submit"
+      class="btn btn-success">
+      Filter
+    </button>
+    <hr>
   </form>
 </div>
