@@ -21,4 +21,4 @@ export class SidebarComponent implements OnInit {
     const clickedKey = event.node.key;
     this.mobilesService.getMobiles(clickedKey);
   }
-
+}

@@ -15,6 +15,16 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { CartItemCardComponent } from './components/shopping-cart/cart-item-card/cart-item-card.component';
 import { DetailsComponent } from './components/main/details/details.component';
 
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzTreeModule } from 'ng-zorro-antd/tree';
+
+import { IconDefinition } from '@ant-design/icons-angular';
+import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd/icon';
+
+// Import what you need. RECOMMENDED. ✔️
+import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -40,7 +50,6 @@ registerLocaleData(en);
     SidebarComponent,
     ShoppingCartComponent,
     SidebarComponent,
-    CartComponent,
 
     FiltersComponent,
     CartItemCardComponent
@@ -52,7 +61,7 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
     NgZorroAntdModule,
     NzButtonModule,
     NzIconModule,
@@ -60,7 +69,7 @@ registerLocaleData(en);
   ],
   providers: [
     { provide: NZ_ICON_DEFAULT_TWOTONE_COLOR, useValue: '#00ff00' }, // If not provided, Ant Design's official blue would be used
-    { provide: NZ_ICONS, useValue: icons }
+    { provide: NZ_ICONS, useValue: icons }, { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]
 })
