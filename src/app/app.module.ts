@@ -34,11 +34,14 @@ registerLocaleData(en);
     MainComponent,
     ListItemComponent,
     ItemCardComponent,
+    HeaderComponent,
     SidebarComponent,
     ShoppingCartComponent,
-    CartItemCardComponent,
+    SidebarComponent,
+    CartComponent,
+
     FiltersComponent,
-    HeaderComponent
+    CartItemCardComponent
   ],
   imports: [
     BrowserModule,
@@ -53,4 +56,3 @@ registerLocaleData(en);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
