@@ -1,10 +1,10 @@
 <div class="main_container" *ngIf="details">
   <div class="imageAndDesc">
     <p class="main">{{ details["brand"] }} {{ details["type"] }}</p>
-    <img class="image" src="{{ details.image }}" alt="nokia3300">
+    <img class="image" src="{{ details.pictures[0] }}" alt="nokia3300">
     <p class="price">{{ details["price"] }} Ft</p>
     <button type="button" class="btn btn-lg btn-success">Add to basket</button>
-    <button class="btn btn-lg btn-outline-success">Compare</button>
+    <button routerLink="/" class="btn btn-lg btn-outline-success" (click)="backToMain()">Back to Main Page</button>
   </div>
   <div class="description">
     <p class="text">Released: <span class="data">{{ details["release"]  }}</span></p>

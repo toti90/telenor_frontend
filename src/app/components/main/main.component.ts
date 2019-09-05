@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MobilesService } from 'src/app/services/mobiles.service';
 
 @Component({
   selector: 'app-main',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
+
+  private detailView = false;
   
-  constructor() { }
+  constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
+    this.mobilesService.selectedPhone.subscribe(response => {
+      if (response.length === 0) {
+        this.detailView = false;
+      } else {
+        this.detailView = true;
+      }
+    })
   }
 
 }
