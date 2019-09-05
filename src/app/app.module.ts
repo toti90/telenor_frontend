@@ -17,7 +17,7 @@ import { DetailsComponent } from './components/main/details/details.component';
     MainComponent,
     ListItemComponent,
     ItemCardComponent,
-    HeaderComponent
+    HeaderComponent,
     DetailsComponent
   ],
   imports: [
