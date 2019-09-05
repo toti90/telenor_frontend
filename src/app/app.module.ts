@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MainComponent } from './components/main/main.component';
-import { DetailsComponent } from './components/details/details.component';
+import { DetailsComponent } from './components/main/details/details.component';
 
 @NgModule({
   declarations: [
