@@ -17,4 +17,9 @@ export class ItemCardComponent implements OnInit {
     this.mobilesService.selectedPhones.subscribe(response => this.phones = response);
   }
 
+  selectOnePhone(phone) {
+    this.mobilesService.setKey(phone.key);
+    this.mobilesService.getOneMobile(phone.key);
+  }
+
 }
