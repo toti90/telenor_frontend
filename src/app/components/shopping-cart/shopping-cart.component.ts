@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MobilesService } from 'src/app/services/mobiles.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,15 +9,23 @@ import { Router } from '@angular/router';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  private arrayOfItems:string[] = [];
+  // private keys:string = '';
+  // private arrayOfKeys:string[] = [];
+  private mobiles: any[];
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router, private mobilesService: MobilesService) { }
 
   ngOnInit() {
-    this.arrayOfItems = localStorage.getItem('shoppingBasket').split(',');
-    
+    if(localStorage.getItem('cart')){
+      // this.keys = localStorage.getItem('cart');
+      // this.arrayOfKeys = localStorage.getItem('cart').split(',');
+      this.mobilesService.phonesInCart.subscribe(response => {
+        this.mobiles = response;
+        console.log(this.mobiles);
+        
+      });
+      this.mobilesService.getMobilesForCart(localStorage.getItem('cart'));
+    }
   }
 
   onRedirect(route: string) {

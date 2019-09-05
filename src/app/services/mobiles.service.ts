@@ -28,7 +28,7 @@ export class MobilesService {
       this.selectedPhonesSubject.next(response)
     })
   }
-  getMobilesForCart(keys: string[]) {
+  getMobilesForCart(keys: string) {
     return this.http.get(`${environment.serverURL}/cart/${keys}`, {
       headers: { 'content-type': 'application/json' },
     }).subscribe(response => {

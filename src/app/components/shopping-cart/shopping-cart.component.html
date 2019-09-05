@@ -1,9 +1,40 @@
 <div class="containerDiv">
-  <h2>Shopping basket (  )</h2>
+  <h3>Shopping basket</h3>
   <div class="wrapper">
-    <div class="listOfItems">
-      <app-cart-item-card *ngFor="let items of arrayOfItems"></app-cart-item-card>
-    </div>
+
+    <ng-template [ngIf]="mobiles" [ngIfElse]="emptyBasket">
+      <div class="listOfItems">
+        <div class="card mb-3" style="max-width: 540px; border: none" *ngFor="let mobile of mobiles">
+            <div class="row no-gutters">
+              <div class="col-md-3">
+                <img [src]="mobile.pictures[0]" class="card-img" alt="...">
+              </div>
+              <div class="col-md-3">
+                <div class="card-body">
+                  <h5 class="card-title">{{ mobile.brand }} {{ mobile.model }}</h5>
+                  <div class="quantityDiv">
+                    <p>Qty</p>
+                    <input #quantityNum class="quantity" min="1" name="quantity" value="1" type="number">
+                  </div>
+                </div>
+              </div>
+              <div class="priceDiv col-md-3">
+                <p>Price: {{ mobile.price*2 }} Ft</p>
+              </div>
+              <div class="buttonDiv col-md-3">
+                <button type="button" class="btn btn-secondary">Remove Item</button>
+              </div>
+            </div>
+          <hr>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #emptyBasket>
+      <div class="emptyBasketDiv">
+        <h3>Your shopping basket is empty</h3>
+      </div>
+    </ng-template>
+
     <div class="sideDiv">
       <button type="button" class="btn btn-success button" (click)="onRedirect('endOfShopping')">Buy Items</button>
       <button type="button" class="btn btn-light button" (click)="onRedirect('')">Continue shopping</button>
