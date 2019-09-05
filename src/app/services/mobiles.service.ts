@@ -11,6 +11,9 @@ export class MobilesService {
   private selectedPhonesSubject = new Subject<any>();
   selectedPhones = this.selectedPhonesSubject.asObservable();
 
+  private phonesInCartSubject = new Subject<any>();
+  phonesInCart = this.phonesInCartSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   getMobilesforSideBar() {
@@ -23,6 +26,13 @@ export class MobilesService {
       headers: { 'content-type': 'application/json' },
     }).subscribe(response => {
       this.selectedPhonesSubject.next(response)
+    })
+  }
+  getMobilesForCart(keys: string[]) {
+    return this.http.get(`${environment.serverURL}/cart/${keys}`, {
+      headers: { 'content-type': 'application/json' },
+    }).subscribe(response => {
+      this.phonesInCartSubject.next(response)
     })
   }
 }

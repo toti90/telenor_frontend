@@ -33,6 +33,7 @@
               }
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.sass"
             ],
             "scripts": []
@@ -129,6 +130,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "telenor-frontend"
 }
