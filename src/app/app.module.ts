@@ -29,8 +29,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import {MatSliderModule} from '@angular/material/slider';
-
 const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
 
 // Import what you need. RECOMMENDED. ✔️
@@ -62,7 +60,6 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
     NgZorroAntdModule,
     NzButtonModule,
     NzIconModule,
