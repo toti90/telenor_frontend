@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,7 +18,7 @@ import { DetailsComponent } from './components/main/details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
 
@@ -26,6 +27,10 @@ import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-
 
 // Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
 
@@ -45,6 +50,7 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     BrowserModule,
     AppRoutingModule,
     TooltipModule.forRoot(),
+    // ModalModule.forRoot(),
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -55,7 +61,8 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
   ],
   providers: [
     { provide: NZ_ICON_DEFAULT_TWOTONE_COLOR, useValue: '#00ff00' }, // If not provided, Ant Design's official blue would be used
-    { provide: NZ_ICONS, useValue: icons }
+    { provide: NZ_ICONS, useValue: icons }, { provide: NZ_I18N, useValue: en_US },
+    // BsModalRef
   ],
   bootstrap: [AppComponent]
 })
