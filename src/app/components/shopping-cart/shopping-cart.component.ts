@@ -8,11 +8,15 @@ import { Router } from '@angular/router';
 })
 export class ShoppingCartComponent implements OnInit {
 
+  private arrayOfItems:string[] = [];
+
   constructor(
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.arrayOfItems = localStorage.getItem('shoppingBasket').split(',');
+    
   }
 
   onRedirect(route: string) {

@@ -2,8 +2,7 @@
   <h2>Shopping basket (  )</h2>
   <div class="wrapper">
     <div class="listOfItems">
-      <app-cart-item-card></app-cart-item-card>
-      <app-cart-item-card></app-cart-item-card>
+      <app-cart-item-card *ngFor="let items of arrayOfItems"></app-cart-item-card>
     </div>
     <div class="sideDiv">
       <button type="button" class="btn btn-success button" (click)="onRedirect('endOfShopping')">Buy Items</button>
