@@ -32,7 +32,7 @@ export class MobilesService {
   }
 
   getOneMobile(key: string) {
-      return this.http.get(`${environment.serverURL}/shop/${key}`, {
+      this.http.get(`${environment.serverURL}/shop/${key}`, {
         headers: { 'content-type': 'application/json' },
       }).subscribe(response => {
         this.selectedPhoneSubject.next(response);

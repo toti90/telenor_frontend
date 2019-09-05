@@ -8,7 +8,7 @@ import { MobilesService } from 'src/app/services/mobiles.service';
 })
 export class MainComponent implements OnInit {
 
-  private detailView = false;
+  public detailView = false;
   
   constructor(private mobilesService: MobilesService) { }
 

@@ -14,9 +14,8 @@ export class DetailsComponent implements OnInit {
     const key = this.mobilesService.getKey();
     if (key) {
       this.mobilesService.getOneMobile(key);
-      this.mobilesService.selectedPhone.subscribe(response => {this.details = response[0]; console.log(response)});
+      this.mobilesService.selectedPhone.subscribe(response => this.details = response[0]);
     }
-    
   }
 
   backToMain() {
