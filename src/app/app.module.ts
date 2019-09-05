@@ -53,6 +53,10 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule
+    NgZorroAntdModule,
+    NzButtonModule,
+    NzIconModule,
+    NzTreeModule,
   ],
   providers: [
     { provide: NZ_ICON_DEFAULT_TWOTONE_COLOR, useValue: '#00ff00' }, // If not provided, Ant Design's official blue would be used
