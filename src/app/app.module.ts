@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MainComponent } from './components/main/main.component';
+import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/main/sidebar/sidebar.component';
 import { FiltersComponent } from './components/main/filters/filters.component';
 
@@ -37,7 +38,8 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     AppComponent,
     MainComponent,
     FiltersComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
