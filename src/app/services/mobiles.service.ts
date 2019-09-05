@@ -11,6 +11,11 @@ export class MobilesService {
   private selectedPhonesSubject = new Subject<any>();
   selectedPhones = this.selectedPhonesSubject.asObservable();
 
+  private selectedPhoneSubject = new Subject<any>();
+  selectedPhone = this.selectedPhoneSubject.asObservable();
+
+  private onePhoneKey: string;
+
   constructor(private http: HttpClient) { }
 
   getMobilesforSideBar() {
@@ -22,7 +27,28 @@ export class MobilesService {
     return this.http.get(`${environment.serverURL}/shop/${key}`, {
       headers: { 'content-type': 'application/json' },
     }).subscribe(response => {
-      this.selectedPhonesSubject.next(response)
+      this.selectedPhonesSubject.next(response);
     })
+  }
+
+  getOneMobile(key: string) {
+      this.http.get(`${environment.serverURL}/shop/${key}`, {
+        headers: { 'content-type': 'application/json' },
+      }).subscribe(response => {
+        this.selectedPhoneSubject.next(response);
+      })
+  }
+
+  getKey() {
+    return this.onePhoneKey;
+  }
+
+  setKey(key?: string) {
+    if (key) {
+      this.onePhoneKey = key;
+    } else {
+      this.onePhoneKey = null;
+      this.selectedPhoneSubject.next([]);
+    }
   }
 }
