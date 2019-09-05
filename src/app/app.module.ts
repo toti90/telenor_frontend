@@ -32,7 +32,7 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     MainComponent,
     ListItemComponent,
     ItemCardComponent,
-    HeaderComponent
+    HeaderComponent,
     SidebarComponent
   ],
   imports: [
