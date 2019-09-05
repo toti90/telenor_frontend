@@ -23,6 +23,7 @@ import { NzTreeModule } from 'ng-zorro-antd/tree';
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 // Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
@@ -52,6 +53,7 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     NzButtonModule,
     NzIconModule,
     NzTreeModule,
+    NzPaginationModule
   ],
   providers: [
     { provide: NZ_ICON_DEFAULT_TWOTONE_COLOR, useValue: '#00ff00' }, // If not provided, Ant Design's official blue would be used
