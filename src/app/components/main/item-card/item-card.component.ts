@@ -9,12 +9,14 @@ import { MobilesService } from 'src/app/services/mobiles.service';
 export class ItemCardComponent implements OnInit {
 
   private phones: any;
-
+  current: number = 1;
   constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
     this.mobilesService.getMobiles();
-    this.mobilesService.selectedPhones.subscribe(response => this.phones = response);
+    this.mobilesService.selectedPhones.subscribe(response => {
+      this.phones = response;
+    });
   }
 
   selectOnePhone(phone) {
