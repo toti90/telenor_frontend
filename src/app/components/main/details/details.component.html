@@ -1,6 +1,6 @@
 <div class="main_container card" *ngIf="details">
   <div class="imageAndDesc">
-    <p class="main">{{ details["brand"] }} {{ details["type"] }}</p>
+    <p class="main">{{ details["brand"] }} {{ details["model"] }}</p>
     <img class="image" src="{{ mainImageLink }}" alt="{{ details.model }}">
     <p class="price">{{ [details.price.slice(0, 2), '.', details.price.slice(2)].join('') }} Ft</p>
     <div class="thumbnails">
