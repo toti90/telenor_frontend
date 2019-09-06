@@ -39,9 +39,9 @@ export class FiltersComponent implements OnInit{
     });
     console.log(this.mobilesOrigin);
     if (!this.filterForm.value.colorDisplay &&
-      this.filterForm.value.camera &&
-      this.filterForm.value.wap){
-        this.mobilesService.updateMobiles(this.mobilesOrigin);
+      !this.filterForm.value.camera &&
+      !this.filterForm.value.wap){
+        this.mobilesService.getMobiles();
       } else {
         this.mobilesService.updateMobiles(newPhoneList);
       }
