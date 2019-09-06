@@ -7,9 +7,8 @@ import { MobilesService } from 'src/app/services/mobiles.service';
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
-
   public detailView = false;
-  
+  public isTrue = false;
   constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
