@@ -33,8 +33,8 @@ export class FiltersComponent implements OnInit {
       this.mobilesOrigin = this.mobilesService.getCurrentMobiles()
       this.mobiles = [...this.mobilesOrigin]
       const newPhoneList = this.mobiles.filter((e) => {
-        return (this.filterForm.value.colorDisplay && e.displayColor !== '1') &&
-          (this.filterForm.value.camera && e.camera !== 'N/A') &&
+        return (this.filterForm.value.colorDisplay && e.displayColor !== '1') ||
+          (this.filterForm.value.camera && e.camera !== 'N/A') ||
           (this.filterForm.value.wap && e.browser.indexOf('WAP') > -1)
       });
       if (!this.filterForm.value.colorDisplay &&

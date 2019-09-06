@@ -11,7 +11,7 @@ export class ShoppingCartComponent implements OnInit {
 
   private totalPrice:number = 0;
   private mobiles: any[];
-  
+
   constructor(private router: Router, private mobilesService: MobilesService) { }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class ShoppingCartComponent implements OnInit {
       let index:number = keyArray.indexOf(key);
       keyArray.splice(index,1);
       localStorage.setItem('cart',keyArray.join(','));
-      this.mobilesService.getMobilesForCart(localStorage.getItem('cart')); 
+      this.mobilesService.getMobilesForCart(localStorage.getItem('cart'));
     }
   }
 

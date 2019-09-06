@@ -15,7 +15,7 @@
                 </div>
               </div>
               <div class="priceDiv col-md-3">
-                <p>Price: {{ mobile.price }} Ft</p>
+                <p>Price: {{ mobile.price | price }} Ft</p>
               </div>
               <div class="buttonDiv col-md-3">
                 <button type="button" class="btn btn-secondary" (click)="removeItem(mobile.key)">Remove Item</button>
@@ -36,7 +36,7 @@
       <button type="button" class="btn btn-light button" (click)="onRedirect('')">Continue shopping</button>
       <div class="totalPrice">
         <h4>Total</h4>
-        <h4>{{ totalPrice }}  Ft</h4>
+        <h4>{{ totalPrice.toString() | price }}  Ft</h4>
       </div>
     </div>
   </div>

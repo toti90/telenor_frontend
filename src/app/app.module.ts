@@ -11,7 +11,6 @@ import { ListItemComponent } from './components/main/list-item/list-item.compone
 import { ItemCardComponent } from './components/main/item-card/item-card.component';
 import { SidebarComponent } from './components/main/sidebar/sidebar.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { CartItemCardComponent } from './components/shopping-cart/cart-item-card/cart-item-card.component';
 import { DetailsComponent } from './components/main/details/details.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,7 +46,6 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     FiltersComponent,
     SidebarComponent,
     ShoppingCartComponent,
-    CartItemCardComponent,
     ConvertPricePipe,
     ConfirmPurchaseComponent
   ],
