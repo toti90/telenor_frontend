@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ConvertPricePipe implements PipeTransform {
 
   transform(value: string): string {
-    return [value.slice(0, 2), '.', value.slice(2)].join('');
+    let reversed = value.split('').reverse().join('');
+    reversed = [reversed.slice(0, 3), '.', reversed.slice(3)].join('');
+    return reversed.split('').reverse().join('');
   }
 
 }

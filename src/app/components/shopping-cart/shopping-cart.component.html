@@ -4,7 +4,7 @@
 
     <ng-template [ngIf]="mobiles" [ngIfElse]="emptyBasket">
       <div class="listOfItems">
-        <div class="card mb-3" style="max-width: 540px; border: none" *ngFor="let mobile of mobiles">
+        <div class="card col-md-12" *ngFor="let mobile of mobiles">
             <div class="row no-gutters">
               <div class="col-md-3">
                 <img [src]="mobile.pictures[0]" class="card-img" alt="...">
