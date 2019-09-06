@@ -12,6 +12,7 @@ import { ItemCardComponent } from './components/main/item-card/item-card.compone
 import { SidebarComponent } from './components/main/sidebar/sidebar.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CartItemCardComponent } from './components/shopping-cart/cart-item-card/cart-item-card.component';
+import { DetailsComponent } from './components/main/details/details.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +23,7 @@ import { NzTreeModule } from 'ng-zorro-antd/tree';
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 // Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
@@ -38,6 +40,7 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     MainComponent,
     ListItemComponent,
     ItemCardComponent,
+    DetailsComponent,
     HeaderComponent,
     SidebarComponent,
     ShoppingCartComponent,
@@ -54,6 +57,7 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     NzButtonModule,
     NzIconModule,
     NzTreeModule,
+    NzPaginationModule
   ],
   providers: [
     { provide: NZ_ICON_DEFAULT_TWOTONE_COLOR, useValue: '#00ff00' }, // If not provided, Ant Design's official blue would be used

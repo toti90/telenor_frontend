@@ -1,4 +1,5 @@
 <div class="main">
   <app-sidebar></app-sidebar>
-  <app-list-item></app-list-item>
+  <app-list-item *ngIf='!detailView'></app-list-item>
+  <app-details *ngIf='detailView'></app-details>
 </div>

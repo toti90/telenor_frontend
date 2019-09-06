@@ -1,0 +1,18 @@
+<div class="main_container" *ngIf="details">
+  <div class="imageAndDesc">
+    <p class="main">{{ details["brand"] }} {{ details["type"] }}</p>
+    <img class="image" src="{{ details.pictures[0] }}" alt="nokia3300">
+    <p class="price">{{ details["price"] }} Ft</p>
+    <button type="button" class="btn btn-lg btn-success" (click)="addPhoneToCart()">Add to basket</button>
+    <button routerLink="/" class="btn btn-lg btn-outline-success" (click)="backToMain()">Back to Main Page</button>
+  </div>
+  <div class="description">
+    <p class="text">Released: <span class="data">{{ details["release"]  }}</span></p>
+    <p class="text">Display size: <span class="data">{{ details["displaySize"]  }} px</span></p>
+    <p class="text">Storage: <span class="data">{{ details["storage"]  }}</span></p>
+    <p class="text">Dimensions: <span class="data">{{ details["dimensions"]  }}</span></p>
+    <p class="text">Weight: <span class="data">{{ details["weight"]  }} g</span></p>
+    <p class="text">Browser: <span class="data">{{ details["browser"]  }} g</span></p>
+    <p class="text">Battery: <span class="data">{{ details["battery"]  }} mAh</span></p>
+  </div>
+</div>
