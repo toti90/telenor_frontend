@@ -4,8 +4,11 @@
     <a class="btn btn-success cart" (click)="addPhoneToCart(phone)"><i class="fas fa-cart-plus shoppingCart"></i></a>
     <div class="card-body">
       <h5 class="card-title">{{ phone.brand }} {{ phone.model }}</h5>
-      <h3 class="card-text">{{ phone.price }} Ft</h3>
+      <h3 class="card-text">{{ [phone.price.slice(0, 2), '.', phone.price.slice(2)].join('') }} Ft</h3>
       <a class="btn btn-outline-success" (click)="selectOnePhone(phone)">View description</a>
     </div>
   </div>
+</div>
+<div class="pagination">
+  <nz-pagination [(nzPageIndex)]="current" [nzTotal]="50" [nzSize]="'small'"></nz-pagination>
 </div>

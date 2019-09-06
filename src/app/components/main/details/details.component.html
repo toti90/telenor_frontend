@@ -2,9 +2,7 @@
   <div class="imageAndDesc">
     <p class="main">{{ details["brand"] }} {{ details["type"] }}</p>
     <img class="image" src="{{ mainImageLink }}" alt="{{ details.model }}">
-    <p class="price">{{ details["price"] }} Ft</p>
-    <!-- <button type="button" class="btn btn-lg btn-success" (click)="addPhoneToCart()">Add to basket</button>
-    <button routerLink="/" class="btn btn-lg btn-outline-success" (click)="backToMain()">Back to Main Page</button> -->
+    <p class="price">{{ [details.price.slice(0, 2), '.', details.price.slice(2)].join('') }} Ft</p>
     <div class="thumbnails">
       <button type="button" class="btn btn-outline-success" *ngFor="let picture of details.pictures; let i = index" (click)="changeMainImage(details.pictures[i])">
         <img class="thumbnail" src="{{ details.pictures[i] }}" alt="{{ details.model }}">
