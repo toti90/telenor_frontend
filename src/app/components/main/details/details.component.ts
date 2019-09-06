@@ -7,14 +7,18 @@ import { MobilesService } from 'src/app/services/mobiles.service';
   styleUrls: ['./details.component.sass']
 })
 export class DetailsComponent implements OnInit {
-  details: object;
+  public details: object;
+  public mainImageLink: string;
   constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
     const key = this.mobilesService.getKey();
     if (key) {
       this.mobilesService.getOneMobile(key);
-      this.mobilesService.selectedPhone.subscribe(response => this.details = response[0]);
+      this.mobilesService.selectedPhone.subscribe(response => {
+        this.details = response[0];
+        this.mainImageLink = response[0].pictures[0];
+      })
     }
   }
 
@@ -29,6 +33,10 @@ export class DetailsComponent implements OnInit {
     } else {
       localStorage.setItem('cart', `${this.details['key']}`);
     }
+  }
+
+  changeMainImage(imageLink: string) {
+    this.mainImageLink = imageLink;
   }
 
 }

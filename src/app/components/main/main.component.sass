@@ -1,5 +1,18 @@
 @import "../../../variables.sass"
 
 .main
+  display: flex
   margin-top: 80px
-  background-color: $body-background
+  @media screen and (max-width: $break-medium)
+    flex-direction: column
+
+  app-sidebar
+    margin-top: 140px
+    margin-left: 5%
+    min-width: 250px
+    position: sticky
+    top: 80px
+    height: 150px
+    @media screen and (max-width: $break-medium)
+      height: auto
+      margin-top: 0
