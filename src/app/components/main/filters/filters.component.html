@@ -1,0 +1,27 @@
+<div class="col-xs-6">
+  <div class=filter-containerA>
+    <hr>
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+        <div class="custom-control custom-checkbox custom-control-inline">
+            <input formControlName="colorDisplay" type="checkbox" class="custom-control-input" id="defaultInline1">
+            <label class="custom-control-label" for="defaultInline1">Color Display</label>
+          </div>
+
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input formControlName="camera" type="checkbox" class="custom-control-input" id="defaultInline2">
+          <label class="custom-control-label" for="defaultInline2">Camera</label>
+        </div>
+
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input formControlName="wap" type="checkbox" class="custom-control-input" id="defaultInline3">
+          <label class="custom-control-label" for="defaultInline3">WAP</label>
+        </div>
+        <button
+        type="submit"
+        class="btn btn-success">
+        Filter
+      </button>
+    </form>
+    <hr>
+  </div>
+</div>

@@ -7,12 +7,40 @@
     justify-content: space-between
     width: 100%
     
-    .listOfItems
+    .listOfItems, .emptyBasketDiv
       display: flex
       flex-wrap: wrap
       padding: 20px
       background-color: #fff
       width: 70%
+
+      .quantityDiv
+        display: flex
+
+      .quantity
+        width: 50px
+        height: 20px
+        margin: 5px
+
+      .priceDiv
+        display: flex
+        justify-content: center
+        align-items: center
+
+      .buttonDiv
+        display: flex
+        justify-content: center
+        align-items: center
+
+        .btn-secondary
+          width: 120px
+          height: 40px
+
+    .emptyBasketDiv
+      display: flex
+      justify-content: center
+      align-items: center
+      justify-items: center
 
     .sideDiv
       width: 28%
@@ -24,7 +52,7 @@
       .button
         width: 100%
         margin-bottom: 10px
-      
+
       .totalPrice
         display: flex
         justify-content: space-between
