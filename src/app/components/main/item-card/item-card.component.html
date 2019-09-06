@@ -9,6 +9,11 @@
     </div>
   </div>
 </div>
-<div class="pagination">
-  <nz-pagination [(nzPageIndex)]="current" [nzTotal]="50" [nzSize]="'small'"></nz-pagination>
-</div>
+<nz-pagination
+  *ngIf="phones"
+      [(nzPageIndex)]="current"
+      [nzTotal]="phones.length"
+      nzShowSizeChanger
+      [nzPageSizeOptions]	= "[1,5,10]"
+></nz-pagination>
+
