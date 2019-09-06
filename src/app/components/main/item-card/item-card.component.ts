@@ -27,7 +27,7 @@ export class ItemCardComponent implements OnInit {
   addPhoneToCart(phone) {
     if (localStorage.getItem('cart')) {
       const alreadyIn = localStorage.getItem('cart')
-      localStorage.setItem('cart', `${alreadyIn}, ${phone.key}`);
+      localStorage.setItem('cart', `${alreadyIn},${phone.key}`);
     } else {
       localStorage.setItem('cart', `${phone.key}`);
     }
