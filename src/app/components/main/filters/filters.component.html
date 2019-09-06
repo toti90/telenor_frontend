@@ -1,7 +1,7 @@
 <div class="col-xs-6">
   <div class=filter-containerA>
+    <hr>
     <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
-        <!-- <hr> -->
         <div class="custom-control custom-checkbox custom-control-inline">
             <input formControlName="colorDisplay" type="checkbox" class="custom-control-input" id="defaultInline1">
             <label class="custom-control-label" for="defaultInline1">Color Display</label>
@@ -21,7 +21,7 @@
         class="btn btn-success">
         Filter
       </button>
-      <!-- <hr> -->
     </form>
+    <hr>
   </div>
 </div>

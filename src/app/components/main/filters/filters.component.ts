@@ -12,6 +12,7 @@ import { MobilesService } from 'src/app/services/mobiles.service';
 export class FiltersComponent implements OnInit{
   filterForm: FormGroup;
   mobiles: any;
+  mobilesOrigin: any;
   key: string;
 
   constructor(
@@ -25,23 +26,26 @@ export class FiltersComponent implements OnInit{
       camera: new FormControl(null),
       wap: new FormControl(null)
     });
-    this.mobilesService.selectedPhones.subscribe((data)=>this.mobiles = data);
+    this.mobilesService.selectedPhones.subscribe((data)=>this.mobilesOrigin = data);
   }
 
   onSubmit() {
-    const data = {
-      colorDisplay: this.filterForm.value.colorDisplay,
-      camera: this.filterForm.value.camera,
-      wap: this.filterForm.value.wap
-    };
-    this.filterService.updateFilterValue(data);
-    console.log(this.mobiles);
-    const newPhoneList = this.mobiles.filter((e)=>{
+    console.log(this.mobilesOrigin);
+    this.mobiles = [...this.mobilesOrigin]
+    const newPhoneList = this.mobiles.filter((e) => {
       return (this.filterForm.value.colorDisplay && e.displayColor!=='1') ||
       (this.filterForm.value.camera && e.camera!=='N/A') ||
       (this.filterForm.value.wap && e.browser.indexOf('WAP')>-1)
     });
-    this.mobilesService.updateMobiles(newPhoneList);
+    console.log(this.mobilesOrigin);
+    if (!this.filterForm.value.colorDisplay &&
+      this.filterForm.value.camera &&
+      this.filterForm.value.wap){
+        this.mobilesService.updateMobiles(this.mobilesOrigin);
+      } else {
+        this.mobilesService.updateMobiles(newPhoneList);
+      }
+    this.mobiles = this.mobilesOrigin.slice()
     console.log('new list: ');
     console.log(newPhoneList);
   }
