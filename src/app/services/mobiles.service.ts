@@ -31,6 +31,10 @@ export class MobilesService {
     })
   }
 
+  updateMobiles(mobiles: any){
+    this.selectedPhonesSubject.next(mobiles);
+  }
+
   getOneMobile(key: string) {
       this.http.get(`${environment.serverURL}/shop/${key}`, {
         headers: { 'content-type': 'application/json' },

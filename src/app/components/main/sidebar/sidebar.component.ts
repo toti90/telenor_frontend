@@ -14,11 +14,15 @@ export class SidebarComponent implements OnInit {
   constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
-    this.mobilesService.getMobilesforSideBar().subscribe(response => this.mobiles = response);
+    this.mobilesService.getMobilesforSideBar().subscribe(response => {
+      this.mobiles = response
+      console.log(this.mobiles);
+    });
   }
 
   selectKey(event: NzFormatEmitEvent) {
     const clickedKey = event.node.key;
+    console.log(event.node.key);
     this.mobilesService.getMobiles(clickedKey);
   }
 }
