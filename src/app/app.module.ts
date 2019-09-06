@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,7 +16,7 @@ import { CartItemCardComponent } from './components/shopping-cart/cart-item-card
 import { DetailsComponent } from './components/main/details/details.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -29,6 +30,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { FiltersComponent } from './components/main/filters/filters.component';
 
 registerLocaleData(en);
 
@@ -42,13 +44,16 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     ItemCardComponent,
     DetailsComponent,
     HeaderComponent,
+    FiltersComponent,
     SidebarComponent,
     ShoppingCartComponent,
+
     CartItemCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     TooltipModule.forRoot(),
     FormsModule,
     HttpClientModule,

@@ -1,12 +1,20 @@
+@import "../../../../variables.sass"
+
 .main_container
   display: flex
+  flex-direction: row
   justify-content: center
-  margin-top: 100px
+  padding: 5%
+  @media screen and (max-width: $break-medium)
+    flex-direction: column
+    width: 91%
+    margin: auto
 
   .imageAndDesc
     display: flex
     flex-direction: column
     align-items: center
+    margin-right: 5%
 
     .main
       font-size: 30px
@@ -14,16 +22,34 @@
       color: #333
 
     .image
-      height: 200px
-      width: 400px
+      object-fit: contain
+      width: 100%
+      max-width: 700px
+      height: 250px
 
     .price
       font-size: 40px
       font-weight: 800
       color: #333
-    
-    button
-      margin-bottom: 10px
+
+    .thumbnails
+      display: flex
+      justify-content: space-between
+      width: 80%
+
+      .btn
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 30%
+
+        .thumbnail
+          object-fit: contain
+          height: 50px
+          max-width: 90%
+          @media screen and (max-width: $break-medium)
+            max-width: 50px
+
 
   .description
     margin-left: 10px
@@ -32,6 +58,9 @@
     flex-direction: column
     justify-content: space-between
     padding: 30px
+
+    button
+      margin-top: 15px
 
     .text
       margin: 0

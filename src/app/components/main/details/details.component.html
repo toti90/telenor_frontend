@@ -1,10 +1,13 @@
-<div class="main_container" *ngIf="details">
+<div class="main_container card" *ngIf="details">
   <div class="imageAndDesc">
-    <p class="main">{{ details["brand"] }} {{ details["type"] }}</p>
-    <img class="image" src="{{ details.pictures[0] }}" alt="nokia3300">
-    <p class="price">{{ details["price"] }} Ft</p>
-    <button type="button" class="btn btn-lg btn-success" (click)="addPhoneToCart()">Add to basket</button>
-    <button routerLink="/" class="btn btn-lg btn-outline-success" (click)="backToMain()">Back to Main Page</button>
+    <p class="main">{{ details["brand"] }} {{ details["model"] }}</p>
+    <img class="image" src="{{ mainImageLink }}" alt="{{ details.model }}">
+    <p class="price">{{ [details.price.slice(0, 2), '.', details.price.slice(2)].join('') }} Ft</p>
+    <div class="thumbnails">
+      <button type="button" class="btn btn-outline-success" *ngFor="let picture of details.pictures; let i = index" (click)="changeMainImage(details.pictures[i])">
+        <img class="thumbnail" src="{{ details.pictures[i] }}" alt="{{ details.model }}">
+      </button>
+    </div>
   </div>
   <div class="description">
     <p class="text">Released: <span class="data">{{ details["release"]  }}</span></p>
@@ -14,5 +17,7 @@
     <p class="text">Weight: <span class="data">{{ details["weight"]  }} g</span></p>
     <p class="text">Browser: <span class="data">{{ details["browser"]  }} g</span></p>
     <p class="text">Battery: <span class="data">{{ details["battery"]  }} mAh</span></p>
+    <button type="button" class="btn btn-lg btn-success" (click)="addPhoneToCart()">Add to basket</button>
+    <button routerLink="/" class="btn btn-lg btn-outline-success" (click)="backToMain()">Back to Main Page</button>
   </div>
 </div>
