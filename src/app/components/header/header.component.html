@@ -1,9 +1,7 @@
 <div class="header">
-  <a href="">
-    <div class="logo" (click)="onRedirect('/')">
-      <img src="../../../assets/toucangsm.png">
-    </div>
-  </a>
+  <div class="logo" (click)="onRedirect('/'); backToMain()">
+    <img src="../../../assets/toucangsm.png">
+  </div>
   <i class="fas fa-shopping-basket shoppingCart" (click)="onRedirect('shoppingCart')">
   <span class="badge badge-danger">4</span>
   </i>
