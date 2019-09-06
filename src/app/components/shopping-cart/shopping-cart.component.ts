@@ -25,13 +25,12 @@ export class ShoppingCartComponent implements OnInit {
     }
   }
 
-  removeItem(key){
+  removeItem(key:string){
     let keyArray = localStorage.getItem('cart').split(',');
     let index:number = keyArray.indexOf(key);
     keyArray.splice(index,1);
     localStorage.setItem('cart',keyArray.join(','));
-    this.mobilesService.getMobilesForCart(localStorage.getItem('cart'));
-    
+    this.mobilesService.getMobilesForCart(localStorage.getItem('cart')); 
   }
 
   onRedirect(route: string) {
