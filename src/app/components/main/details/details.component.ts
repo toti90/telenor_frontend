@@ -22,4 +22,13 @@ export class DetailsComponent implements OnInit {
     this.mobilesService.setKey();
   }
 
+  addPhoneToCart() {
+    if (localStorage.getItem('cart')) {
+      const alreadyIn = localStorage.getItem('cart')
+      localStorage.setItem('cart', `${alreadyIn}, ${this.details['key']}`);
+    } else {
+      localStorage.setItem('cart', `${this.details['key']}`);
+    }
+  }
+
 }

@@ -22,4 +22,13 @@ export class ItemCardComponent implements OnInit {
     this.mobilesService.getOneMobile(phone.key);
   }
 
+  addPhoneToCart(phone) {
+    if (localStorage.getItem('cart')) {
+      const alreadyIn = localStorage.getItem('cart')
+      localStorage.setItem('cart', `${alreadyIn}, ${phone.key}`);
+    } else {
+      localStorage.setItem('cart', `${phone.key}`);
+    }
+  }
+
 }
