@@ -1,4 +1,4 @@
-<button nz-button [nzType]="'primary'" class="completeButton" (click)="showModal()"><span>Buy Items</span></button>
+<button type="button" class="btn btn-success button" (click)="showModal()">Buy Items</button>
 <nz-modal [(nzVisible)]="isVisible" nzTitle="Complete your purchase" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()" nzOkText="Complete Purchase" nzCancelText="Cancel">
   <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
     <nz-form-item>
