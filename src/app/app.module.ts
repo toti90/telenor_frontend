@@ -26,11 +26,11 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd/icon';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
-// Import what you need. RECOMMENDED. ✔️
 import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FiltersComponent } from './components/main/filters/filters.component';
+import { ConvertPricePipe } from './pipes/convert-price.pipe';
 
 registerLocaleData(en);
 
@@ -47,8 +47,8 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     FiltersComponent,
     SidebarComponent,
     ShoppingCartComponent,
-
-    CartItemCardComponent
+    CartItemCardComponent,
+    ConvertPricePipe
   ],
   imports: [
     BrowserModule,

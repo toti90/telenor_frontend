@@ -1,8 +1,8 @@
 <div class="main_container card" *ngIf="details">
   <div class="imageAndDesc">
-    <p class="main">{{ details["brand"] }} {{ details["type"] }}</p>
+    <p class="main">{{ details["brand"] }} {{ details["model"] }}</p>
     <img class="image" src="{{ mainImageLink }}" alt="{{ details.model }}">
-    <p class="price">{{ [details.price.slice(0, 2), '.', details.price.slice(2)].join('') }} Ft</p>
+    <p class="price">{{ details.price | price }} Ft</p>
     <div class="thumbnails">
       <button type="button" class="btn btn-outline-success" *ngFor="let picture of details.pictures; let i = index" (click)="changeMainImage(details.pictures[i])">
         <img class="thumbnail" src="{{ details.pictures[i] }}" alt="{{ details.model }}">
