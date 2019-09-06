@@ -12,17 +12,13 @@
               <div class="col-md-3">
                 <div class="card-body">
                   <h5 class="card-title">{{ mobile.brand }} {{ mobile.model }}</h5>
-                  <div class="quantityDiv">
-                    <p>Qty</p>
-                    <input #quantityNum class="quantity" min="1" name="quantity" value="1" type="number">
-                  </div>
                 </div>
               </div>
               <div class="priceDiv col-md-3">
-                <p>Price: {{ mobile.price*2 }} Ft</p>
+                <p>Price: {{ mobile.price }} Ft</p>
               </div>
               <div class="buttonDiv col-md-3">
-                <button type="button" class="btn btn-secondary">Remove Item</button>
+                <button type="button" class="btn btn-secondary" (click)="removeItem(mobile.key)">Remove Item</button>
               </div>
             </div>
           <hr>
@@ -40,7 +36,7 @@
       <button type="button" class="btn btn-light button" (click)="onRedirect('')">Continue shopping</button>
       <div class="totalPrice">
         <h4>Total</h4>
-        <h4>  Ft</h4>
+        <h4>{{ totalPrice }}  Ft</h4>
       </div>
     </div>
   </div>
