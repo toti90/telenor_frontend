@@ -30,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FiltersComponent } from './components/main/filters/filters.component';
 import { ConvertPricePipe } from './pipes/convert-price.pipe';
+import { ConfirmPurchaseComponent } from './components/shopping-cart/confirm-purchase/confirm-purchase.component';
 
 registerLocaleData(en);
 
@@ -47,7 +48,8 @@ const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
     SidebarComponent,
     ShoppingCartComponent,
     CartItemCardComponent,
-    ConvertPricePipe
+    ConvertPricePipe,
+    ConfirmPurchaseComponent
   ],
   imports: [
     BrowserModule,

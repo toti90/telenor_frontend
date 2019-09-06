@@ -12,7 +12,7 @@ export class ShoppingCartComponent implements OnInit {
   // private keys:string = '';
   // private arrayOfKeys:string[] = [];
   private mobiles: any[];
-
+  
   constructor(private router: Router, private mobilesService: MobilesService) { }
 
   ngOnInit() {
