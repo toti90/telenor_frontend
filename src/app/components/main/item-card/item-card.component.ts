@@ -9,6 +9,7 @@ import { MobilesService } from 'src/app/services/mobiles.service';
 export class ItemCardComponent implements OnInit {
 
   private phones: any;
+  current = 1;
 
   constructor(private mobilesService: MobilesService) { }
 

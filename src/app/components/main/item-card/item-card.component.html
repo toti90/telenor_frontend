@@ -9,5 +9,14 @@
           <a class="btn btn-outline-primary" (click)='selectOnePhone(phone)'>View description</a>
           <a class="btn btn-success" (click)='addPhoneToCart(phone)'>Add to Shopping Cart</a>
         </div>
+        
       </div>
 </div>
+<nz-pagination
+  *ngIf="phones"
+      [(nzPageIndex)]="current"
+      [nzTotal]="phones.length"
+      nzShowSizeChanger
+      [nzPageSizeOptions]	= "[1,5,10]"
+></nz-pagination>
+
