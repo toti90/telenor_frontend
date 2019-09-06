@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MobilesService } from 'src/app/services/mobiles.service';
 
 @Component({
   selector: 'app-list-item',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
 
-  constructor() { }
+  private phones: any;
+
+  constructor(private mobilesService: MobilesService) { }
 
   ngOnInit() {
+    this.mobilesService.selectedPhones.subscribe(response => {
+      this.phones = response;
+    });
   }
 
 }
